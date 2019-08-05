@@ -1,17 +1,13 @@
 late = locals()["late"]
 name = "bleed"
-version = "1.0.14"
+version = "1.0.15"
 build_command = "python -m rezutil build {root}"
 private_build_requires = ["rezutil-1"]
 
 _requires = [
-    "global",
-
     "~blender==2.80.0",
     "~maya==2015.0.0|2016.0.2|2017.0.4|2018.0.6",
 
-    "python-3",
-    "pyqt5-5.8",
     "pymongo-3.4+",
     "colorbleed-1",
     "avalon-5.2+",
@@ -30,7 +26,9 @@ def requires():
     if in_context():
         if "maya" in request:
             requires += [
-                "ffmpeg",
+
+                # Provided by the Allzpark demo packages
+                "mgear",
             ]
 
     return requires
