@@ -1,12 +1,17 @@
 late = locals()["late"]
 name = "bleed"
-version = "1.0.15"
+version = "1.0.16"
 build_command = "python -m rezutil build {root}"
 private_build_requires = ["rezutil-1"]
 
 _requires = [
     "~blender==2.80.0",
     "~maya==2015.0.0|2016.0.2|2017.0.4|2018.0.6|2019.0.3",
+
+    "python-3",
+    "pyqt5-5.8",
+    "pyblish_qml",
+    "pyblish_base-1.5.3",
 
     "pymongo-3.4+",
     "avalon_colorbleed-1",
@@ -49,6 +54,10 @@ def commands():
     env["AVALON_CONFIG"] = "colorbleed"
     env["AVALON_PROJECT"] = this.name
     env["AVALON_EARLY_ADOPTER"] = "yes"
+
+    if os.name == "nt":
+        env["PYBLISH_QML_PYTHON_EXECUTABLE"] = "{env.REZ_PYTHON_ROOT}/app/python.exe"
+        env["PYBLISH_QML_PYQT5"] = "{env.REZ_PYQT5_ROOT}/python"
 
     if "maya" in request:
         env["PYTHONPATH"].append("{root}/maya")  # userSetup.py
