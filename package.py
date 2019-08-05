@@ -6,7 +6,7 @@ private_build_requires = ["rezutil-1"]
 
 _requires = [
     "~blender==2.80.0",
-    "~maya==2015.0.0|2016.0.2|2017.0.4|2018.0.6",
+    "~maya==2015.0.0|2016.0.2|2017.0.4|2018.0.6|2019.0.3",
 
     "pymongo-3.4+",
     "colorbleed-1",
