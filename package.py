@@ -9,8 +9,8 @@ _requires = [
     "~maya==2015.0.0|2016.0.2|2017.0.4|2018.0.6|2019.0.3",
 
     "pymongo-3.4+",
-    "colorbleed-1",
-    "avalon-5.2+",
+    "avalon_colorbleed-1",
+    "avalon_core-5.2+",
 ]
 
 
